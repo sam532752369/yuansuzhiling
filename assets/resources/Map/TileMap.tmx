@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="9">
+ <tileset firstgid="1" name="tmw_desert_spacing" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="48" columns="8">
+  <image source="tmw_desert_spacing.png" width="265" height="199"/>
+ </tileset>
+ <tileset firstgid="49" name="meta_tiles" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="2" columns="2">
+  <image source="meta_tiles.png" width="67" height="34"/>
+  <tile id="0">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Collectable" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer id="1" name="Background" width="50" height="50" locked="1">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACu3ZyQ6CMBAG4KqJuONycEtIjVtw4f0fzyHxUKOUxrYw087hu5BG/vnHnsiEEFlAtmBnYI8gq84BnMBN4wyOCLL+IpU56jKqZ6Tle22ymma0OWOTwdX/6iG+74F6b54WczQlF5934V7znIIC9EECBgjymLhUmIEUzDVnSldFm3MkFabvOSaaMyrTvUlPc6SOlHsr/szgYra1IxtPPfua28VvUJiTMRMSQQZGd69NvYci7N1gz4eti5j7inl27pzxTv3MGEMfTXfKGGYSQYaQUOmTSk5qWal3xF2Hh3calpj2aTJrB3RBj3Df5ffHIRiBcctZbC3AEqwQZGHVXioTDwQQJwAA
+  </data>
+ </layer>
+ <objectgroup id="2" name="obj">
+  <object id="1" name="player" x="47.6667" y="335.333"/>
+  <object id="4" name="enemy" x="327.333" y="104" width="19.3333" height="19.3333">
+   <properties>
+    <property name="direction" value="1"/>
+   </properties>
+  </object>
+  <object id="5" name="enemy" x="294" y="296" width="19.3333" height="19.3333">
+   <properties>
+    <property name="direction" value="4"/>
+   </properties>
+  </object>
+  <object id="6" name="enemy" x="581.333" y="328.667" width="19.3333" height="19.3333">
+   <properties>
+    <property name="direction" value="1"/>
+   </properties>
+  </object>
+  <object id="7" name="enemy" x="131" y="104.333" width="19.3333" height="19.3333">
+   <properties>
+    <property name="direction" value="3"/>
+   </properties>
+  </object>
+  <object id="8" name="npc" x="132.667" y="423.333" width="22" height="18"/>
+ </objectgroup>
+ <layer id="3" name="Foreground" width="50" height="50" locked="1">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACu3aAQ0AAAjDsDvBv0tcQAKtgglYArNqOwAAAAAAAAAAAB67/O80lrvlwRAnAAA=
+  </data>
+ </layer>
+ <layer id="4" name="meta" width="50" height="50" locked="1">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACu3ZMQ6AMAxD0Vwpvf/hWFEkFKoWTMIfnlgYbBK6dJjZaMQnqLN27uGnZ5bRw/vq7FnGlXfUrvanyl516xE7qTPsmEPsUfkc+zNmwjevmhE9sGtYwf7UxexwF7sCABqcvwDwDs5boK+Z+/8v36PRQ5+3ao8dd8rqDk/NQ/0/ZLOq2uMArNP74xAnAAA=
+  </data>
+ </layer>
+</map>
