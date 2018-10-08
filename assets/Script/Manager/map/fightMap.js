@@ -1,4 +1,5 @@
 var mapU = require('MapUtil');
+var mapConfig = require('mapConfig');
 cc.Class({
     extends: cc.Component,
 
@@ -23,20 +24,34 @@ cc.Class({
    
     //加载地图文件时调用
     loadMap: function () {
+        var self = this;
+        //动态加载地图
+        var theMap = this.node.addComponent(cc.TiledMap);
+        let mapBG = mapConfig.fightMap[1].bg;
+        cc.loader.loadRes(mapBG, function (err, map) {
+            cc.log(map,8888);
+            // 资源加载完成，为地图组件设置地图资源
+            theMap.tmxAsset = map;
+            // //地图
+            self._tiledMap = self.node.getComponent(cc.TiledMap);
+            self._tileSize = self._tiledMap.getTileSize();
+            self._mapSize = self._tiledMap.getMapSize();
+            //players对象层
+            self._objectGroup = self._tiledMap.getObjectGroup('obj');
+            //障碍物图层
+            self._barrierGroup = self._tiledMap.getLayer('meta');
+            //对象改为配置设置
+            //循环对象层,设置对象位置
+            for(var i in self._objectGroup.getObjects()){
+                self.setObjectPos(self._objectGroup.getObjects()[i]);
+            }
+        });
+
+
         //初始化地图位置
         // this.node.setPosition(cc.visibleRect.bottomLeft);
-        //地图
-        this._tiledMap = this.node.getComponent(cc.TiledMap);
-        this._tileSize = this._tiledMap.getTileSize();
-        this._mapSize = this._tiledMap.getMapSize();
-        //players对象层
-        this._objectGroup = this._tiledMap.getObjectGroup('obj');
-        //障碍物图层
-        this._barrierGroup = this._tiledMap.getLayer('meta');
-        //循环对象层,设置对象位置
-        for(var i in this._objectGroup.getObjects()){
-            this.setObjectPos(this._objectGroup.getObjects()[i]);
-        }
+        
+
         //结束位置
         // var endPos = cc.p(0, 1000);
         // this.endTile = this.getTilePos(endPos);

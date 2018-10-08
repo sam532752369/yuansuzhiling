@@ -7,7 +7,7 @@ proid=>事件ID,
 param=>事件参数,
 func=>事件回调函数
 */
-var NetEventObject = function(proid,param,func){
+var NetEventObject = function(proid,param,func){ 
 	this.a = proid;
 	this.d = param;
 	this.func = func;
